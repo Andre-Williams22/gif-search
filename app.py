@@ -6,19 +6,9 @@ app = Flask(__name__)
 
 
 
-
-@app.route('/')
-def home():
-    return "<h1> Hello World </h1>"
-
-
-
-if __name__ =="__main__":
-    app.run(debug=True,port=8080)
-'''
 @app.route('/joke')
 def make_joke():
-    params = { "q": query_term,
+    params = { "gifs": 'faces',
     "Key": "1F2TY5LFTDOH" }
     response = requests.get(
     'https://api.tenor.com/v1/search',
@@ -28,4 +18,8 @@ def make_joke():
     joke_json = response.json()
     joke_str = joke_json
     return joke_str
-'''
+
+
+
+if __name__ =="__main__":
+    app.run(debug=True,port=8080)

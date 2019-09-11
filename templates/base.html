@@ -3,19 +3,19 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>GIF Search</title>
 </head>
 
 <body>
-
-
-    {% block searchbar %}{% endblock %}
-    <h1>test</h1>
+    {% block index %}{% endblock %}
 
 
     <!-- Include the Tenor JavaScript to fill in GIFs appropriately -->
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <script src="https://kit.fontawesome.com/8cba328980.js"></script>
 </body>
 
 </html>

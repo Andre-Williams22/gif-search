@@ -1,5 +1,5 @@
 import requests
-from flask import Flask
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
@@ -15,6 +15,11 @@ def make_joke():
     joke_json = response.json()
     joke_str = joke_json
     return joke_str
+
+
+@app.route('/search')
+def search_form():
+    return render_template('index.html')
 
 
 if __name__ == "__main__":

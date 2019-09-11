@@ -4,14 +4,13 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/joke')
+@app.route('/')
 def make_joke():
     params = { "gifs": 'faces',
     "Key": "1F2TY5LFTDOH" }
     response = requests.get(
     'https://api.tenor.com/v1/search',
     params=params)
-
 
     joke_json = response.json()
     joke_str = joke_json

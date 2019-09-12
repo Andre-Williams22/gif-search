@@ -69,6 +69,7 @@ body {
     color: #e2e2e2;
     margin-left: -72px;
     padding: 17px 22px 17px 22px;
+    border: 0;
     background: linear-gradient(
         90deg,
         rgba(255, 55, 103, 1) 0%,

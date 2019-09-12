@@ -4,6 +4,7 @@
 
 <!-- TODO: Make an HTML form containing a search box and a submit button to add the search term to the query string -->
 {% block index %}
+<!-- Navigation -->
 <div class="container">
     <nav class="navbar navbar-expand-lg sticky-top">
         <a class="navbar-brand" href="#">.Gif</a>
@@ -29,33 +30,37 @@
         </div>
     </nav>
 </div>
+<!-- Header Contents -->
 <div class="header-container">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                
+                <!-- Search bar -->
                 <form class="gif-search justify-content-center" action="/gif" method="GET">
                     <input class="search-input" name="search-term" type="text" placeholder="Search for a GIF..." aria-label="Search">
                     <button type="submit" class="search-icon"><i class="fas fa-search"></i></button>
                 </form>
+
             </div>
         </div>
     </div>
 </div>
+
+<!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
+<!-- Gif Contents -->
 <div class="gif-container">
     <div class="container">
         <div class="row">
-            <!-- Is the color red-->
             <div class="col-md-12 gif-content">
+                {% for gif in response %}
 
+                <img src="{{response}}" alt="Gif images">
+
+                {% endfor %}
             </div>
         </div>
     </div>
 </div>
 
-{% endblock %}
-
-
-<!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
-
 <!-- TODO: For each gif, include the 'gif.html' template to display it -->
+{% endblock %}

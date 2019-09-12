@@ -28,7 +28,7 @@ def make_gif():
     # creates a list of urls and thier fixed images
     #urls = [image['images']['fixed_width']['url'] for image in images]
     
-    return render_template('gif.html', urls=urls)
+    return render_template('gif.html', response=response)
 
 
 

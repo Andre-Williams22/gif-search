@@ -8,9 +8,6 @@ import json
 app = Flask(__name__)
 
 
-# define a function that searches the Giphypop API with the giphypop library
-
-
 # represents home page
 @app.route('/')
 def index():
@@ -26,6 +23,7 @@ def make_gif():
     response = requests.get(f'https://api.giphy.com/v1/gifs/search?api_key=RszCWrqNToHdZUk9E2o7f2TPk5Srv6y4&q={search_term}&limit=25&offset=0&rating=G&lang=en')
     
     images = json.loads(response.text)['data']
+    # creates a list of urls and thier fixed images
     urls = [image['images']['fixed_width']['url'] for image in images]
     
     return render_template('gif.html', urls=urls)

@@ -39,6 +39,21 @@ body {
     height: 412px;
 }
 
+.response-text {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 45px;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.45);
+}
+
+.response-text span {
+    display: block;
+    font-size: 13px;
+    color: #909090;
+    text-transform: uppercase;
+}
+
 /* Search bar Properties */
 .gif-search a:hover {
     color: #e2e2e2;
@@ -86,4 +101,5 @@ body {
 /* Gif container Properties */
 .gif-content {
     height: 600px;
+    margin-top: 60px;
 }

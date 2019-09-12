@@ -86,4 +86,5 @@ body {
 .gif-content {
     height: 600px;
     margin-top: 70px;
+    background-color: blue;
 }

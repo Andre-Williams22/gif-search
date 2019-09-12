@@ -24,7 +24,7 @@ def make_gif():
     search_term = request.args.get('search-term')
 
     response = requests.get(f'https://api.giphy.com/v1/gifs/search?api_key=RszCWrqNToHdZUk9E2o7f2TPk5Srv6y4&q={search_term}&limit=25&offset=0&rating=G&lang=en')
-    # helped by IKE and Medi
+    
     images = json.loads(response.text)['data']
     urls = [image['images']['fixed_width']['url'] for image in images]
     

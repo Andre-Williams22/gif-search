@@ -17,7 +17,7 @@ def index():
 
     return render_template('index.html', list_of_gifs=list_of_gifs)  # points to index.html page
 
-@app.route('/gif', methods = ['GET', 'POST'])
+@app.route('/gif')
 def make_gif():
  
     search_term = request.args.get('search-term')
@@ -28,11 +28,10 @@ def make_gif():
     if response.status_code == 200:
         # load the GIFs using the urls for the smaller GIF sizes
         top_10gifs = json.loads(response.content)
-        print(top_10gifs['results'][0])
         # print(top_10gifs['results'])
         return render_template('index.html', list_of_gifs=top_10gifs['results'])
     else:
-        return render_template('index.html', list_of_gifs=None)
+        top_10gifs = None   
 
 
 

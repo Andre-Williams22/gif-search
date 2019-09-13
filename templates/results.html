@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block results %}
+
+                {%for gif in top10_gifs%}
+                    {% include 'gif.html' %}
+                {%endfor%}
+
+{% endblock %}
+
+

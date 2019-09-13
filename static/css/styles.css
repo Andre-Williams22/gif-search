@@ -31,11 +31,28 @@ body {
     color: #484848;
 }
 
+nav.navbar.navbar-expand-lg.sticky-top.text-center {
+    justify-content: center;
+    display: block;
+}
+
+.navbar-nav {
+    float: none;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.navbar-nav > li {
+    display: inline-block;
+    float: none;
+}
+
 /* Header Properties */
 .header-container {
     background: url('/static/img/home-header.png') no-repeat;
     background-size: cover;
-    margin-top: -59px;
+    margin-top: -98px;
     height: 412px;
 }
 

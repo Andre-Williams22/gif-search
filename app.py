@@ -11,33 +11,41 @@ app = Flask(__name__)
 # represents home page
 @app.route('/')
 def index():
-    return render_template('index.html')  # points to index.html page
 
+    results = top_ten()
+    list_of_gifs = results['results']
 
-@app.route('/gif', methods=["GET"])
+    return render_template('index.html', list_of_gifs=list_of_gifs)  # points to index.html page
+
+@app.route('/gif')
 def make_gif():
  
     search_term = request.args.get('search-term')
 
     response = requests.get(f'https://api.tenor.com/v1/search?q={search_term}&key=1F2TY5LFTDOH&limit=10')
 
+
     if response.status_code == 200:
         # load the GIFs using the urls for the smaller GIF sizes
         top_10gifs = json.loads(response.content)
-        return top_10gifs
+        print(top_10gifs['results'])
+        return render_template('results.html', top_10gifs=top_10gifs['results'])
     else:
-        top_10gifs = None
-    '''
-    images = json.loads(response.text)
-
-    urls = [image['images']['fixed_width']['url'] for image in images
-
-    return render_template('gif.html', response=response)
-    #images = json.loads(response.text)['data']
-    # creates a list of urls and thier fixed images
-    #urls = [image['images']['fixed_width']['url'] for image in images]'''
+        top_10gifs = None 
 
 
+
+# get the top 10 trending GIFs - using the default locale of en_US
+
+def top_ten():
+    r = requests.get("https://api.tenor.com/v1/trending?key=1F2TY5LFTDOH&limit=10")
+    
+    if r.status_code == 200:
+        trending_gifs = json.loads(r.content)
+    else:
+        trending_gifs = None
+
+    return trending_gifs
 
 
 

@@ -17,21 +17,22 @@ def index():
 
     return render_template('index.html', list_of_gifs=list_of_gifs)  # points to index.html page
 
-@app.route('/gif')
+@app.route('/gif', methods = ['GET', 'POST'])
 def make_gif():
  
     search_term = request.args.get('search-term')
+    print(search_term)
 
     response = requests.get(f'https://api.tenor.com/v1/search?q={search_term}&key=1F2TY5LFTDOH&limit=10')
-
 
     if response.status_code == 200:
         # load the GIFs using the urls for the smaller GIF sizes
         top_10gifs = json.loads(response.content)
-        print(top_10gifs['results'])
-        return render_template('results.html', top_10gifs=top_10gifs['results'])
+        print(top_10gifs['results'][0])
+        # print(top_10gifs['results'])
+        return render_template('index.html', list_of_gifs=top_10gifs['results'])
     else:
-        top_10gifs = None 
+        return render_template('index.html', list_of_gifs=None)
 
 
 

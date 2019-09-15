@@ -4,7 +4,7 @@
 {% block index %}
 <!-- Navigation -->
 <div class="container">
-    <nav class="navbar navbar-expand-lg sticky-top text-center">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <a class="navbar-brand" href="/">.Gif</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -37,6 +37,14 @@
                     <input class="search-input" name="search_term" type="text" placeholder="Search for a GIF..." aria-label="Search">
                     <button type="submit" class="search-icon"><i class="fas fa-search"></i></button>
                 </form>
+
+                {% if search %}
+                <h1 class="response-text">
+                    <span>Category</span>
+                    {{search}}
+                </h1>
+                {% endif %}
+
 
             </div>
         </div>

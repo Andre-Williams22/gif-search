@@ -1,23 +1,21 @@
-<!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
 {% extends 'base.html' %}
 
 
-<!-- TODO: Make an HTML form containing a search box and a submit button to add the search term to the query string -->
 {% block index %}
+<!-- Navigation -->
 <div class="container">
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <a class="navbar-brand" href="#">.Gif</a>
+    <nav class="navbar navbar-expand-lg sticky-top text-center">
+        <a class="navbar-brand" href="/">.Gif</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Popular <i class="fas fa-star"></i>
-                    </a>
+                    <a class="nav-link" href="#">Popular <i class="fas fa-star"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Entertainment</a>
@@ -29,33 +27,34 @@
         </div>
     </nav>
 </div>
+<!-- Header Contents -->
 <div class="header-container">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                
-                <form class="gif-search justify-content-center" action="/gif" method="GET">
-                    <input class="search-input" name="search-term" type="text" placeholder="Search for a GIF..." aria-label="Search">
+                <!-- Search bar -->
+                <form class="gif-search justify-content-center" action="/search" method="GET">
+                    <input class="search-input" name="search_term" type="text" placeholder="Search for a GIF..." aria-label="Search">
                     <button type="submit" class="search-icon"><i class="fas fa-search"></i></button>
                 </form>
+
             </div>
         </div>
     </div>
 </div>
+<!-- Gif Contents -->
 <div class="gif-container">
     <div class="container">
         <div class="row">
-            <!-- Is the color red-->
             <div class="col-md-12 gif-content">
+                {% for gif in gifs %}
 
+                {% include 'gif.html' %}
+
+                {% endfor %}
             </div>
         </div>
     </div>
 </div>
 
 {% endblock %}
-
-
-<!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
-
-<!-- TODO: For each gif, include the 'gif.html' template to display it -->

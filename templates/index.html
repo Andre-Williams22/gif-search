@@ -1,13 +1,10 @@
-<!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
 {% extends 'base.html' %}
 
 <!-- templates/gif.html -->
 
-<!-- TODO: Make an HTML form containing a search box and a submit button to add the search term to the query string -->
 {% block index %}
-                {%for gif in list_of_gifs%}
-                    {% include 'gif.html' %}
-                {%endfor%}
+{%for gif in list_of_gifs%}
+{% include 'gif.html' %}
+{%endfor%}
 
 {% endblock %}
-

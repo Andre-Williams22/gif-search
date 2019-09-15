@@ -31,12 +31,39 @@ body {
     color: #484848;
 }
 
+.navbar-nav {
+    float: none;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.navbar-nav > li {
+    display: inline-block;
+    float: none;
+}
+
 /* Header Properties */
 .header-container {
     background: url('/static/img/home-header.png') no-repeat;
     background-size: cover;
-    margin-top: -59px;
+    margin-top: -98px;
     height: 412px;
+}
+
+.response-text {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 45px;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.45);
+    text-transform: uppercase;
+}
+
+.response-text span {
+    display: block;
+    font-size: 13px;
+    color: #909090;
 }
 
 /* Search bar Properties */
@@ -69,6 +96,7 @@ body {
     color: #e2e2e2;
     margin-left: -72px;
     padding: 17px 22px 17px 22px;
+    border: 0;
     background: linear-gradient(
         90deg,
         rgba(255, 55, 103, 1) 0%,
@@ -83,10 +111,18 @@ body {
 }
 
 /* Gif container Properties */
+/* .gifs {
+    padding-left: 75px;
+} */
+
 .gif-content {
     height: 600px;
-    margin-top: 70px;
-
- 
-   
+    margin-top: 60px;
+    margin-bottom: -174px;
 }
+/* 
+.tenor-gif-embed {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: 15px;
+} */

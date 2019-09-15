@@ -6,63 +6,69 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>GIF Search</title>
+    <title>.Gif Search</title>
 </head>
 
 <body>
 
+    <div class="container">
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <a class="navbar-brand" href="#">.Gif</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Popular <i class="fas fa-star"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Entertainment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sports</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="header-container">
         <div class="container">
-                <nav class="navbar navbar-expand-lg sticky-top">
-                    <a class="navbar-brand" href="#">.Gif</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Popular <i class="fas fa-star"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Entertainment</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Sports</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="header-container">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <form class="gif-search justify-content-center" action="/gif" method="GET">
-                                <input class="search-input" name="search-term" type="text" placeholder="Search for a GIF..." aria-label="Search">
-                                <button type="submit" class="search-icon"><i class="fas fa-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <form class="gif-search justify-content-center" action="/gif" method="GET">
+                        <input class="search-input" name="search-term" type="text" placeholder="Search for a GIF..." aria-label="Search">
+                        <button type="submit" class="search-icon"><i class="fas fa-search"></i></button>
+                    </form>
+                    {% if search_term %}
+                    <h1 class="response-text">
+                        <span>Category</span>
+                        {{search_term}}
+                    </h1>
+                    {% endif %}
                 </div>
             </div>
-            <div class="gif-container">
-                <div class="container">
-                    <div class="row">
-                        
-                        <div class="col-md-12 gif-content">
-                               
-                                    {% block index %}
-                                    {% endblock %}
+        </div>
+    </div>
+    <div class="gif-container">
+        <div class="container">
+            <div class="row">
 
-                        </div>
-                    </div>
+                <div class="col-md-12 gif-content">
+
+                    {% block index %}
+                    {% endblock %}
+
                 </div>
             </div>
+        </div>
+    </div>
 
- 
+
 
 
     <!-- Include the Tenor JavaScript to fill in GIFs appropriately -->

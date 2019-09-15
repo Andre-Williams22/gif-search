@@ -16,8 +16,7 @@ def index():
 
 @app.route('/gif', methods=["GET"])
 def make_gif():
-    # data=json.loads(s.urlopen("http://api.giphy.com/v1/gifs/search?q=nerdy&api_key=RszCWrqNToHdZUk9E2o7f2TPk5Srv6y4&q&limit=40&offset=0&rating=G&lang=en").read())
-    # return json.dumps(data, sort_keys=True, indent=4)
+
     search_term = request.args.get('search-term')
 
     response = requests.get(f'https://api.giphy.com/v1/gifs/search?api_key=RszCWrqNToHdZUk9E2o7f2TPk5Srv6y4&q={search_term}&limit=25&offset=0&rating=G&lang=en')

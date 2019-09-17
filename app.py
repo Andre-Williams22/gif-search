@@ -36,6 +36,27 @@ def make_gif():
     else:
         top_10gifs = None
 
+@app.route('/sports', methods=['GET', 'POST'])
+def sports():
+    # set the apikey and limit
+    apikey = "LIVDSRZULELA"  # test value
+    lmt = 10
+
+    # our test search
+    search_term = "sports"
+
+    # get the top 8 GIFs for the search term
+    r = requests.get(
+        "https://api.tenor.com/v1/search?q=%s&key=%s&limit=%s" % (search_term, apikey, lmt))
+
+    if r.status_code == 200:
+        # load the GIFs using the urls for the smaller GIF sizes
+        sports = json.loads(r.content)
+        return render_template('sports.html', list_or_gifs=sports['results'])
+    else:
+        sports = None
+
+
 
 # get the top 10 trending GIFs - using the default locale of en_US
 

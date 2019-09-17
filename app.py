@@ -38,7 +38,6 @@ def make_gif():
 
 @app.route('/sports', methods=['GET'])
 def sports():
-
     search_term = "sports"
     response = requests.get(
         f'https://api.tenor.com/v1/random?q={search_term}&?key=1F2TY5LFTDOH&limit=10')
@@ -67,7 +66,7 @@ def entertainment():
 @app.route('/popular', methods=['GET'])
 def popular():
 
-    search_term = "popular"
+    search_term = "trending"
     response = requests.get(
         f'https://api.tenor.com/v1/trending?key=1F2TY5LFTDOH&limit=10')
 

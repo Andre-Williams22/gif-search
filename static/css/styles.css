@@ -110,18 +110,28 @@ body {
     transition: 0.3s;
 }
 
-/* Gif container Properties */
-/* .gifs {
-    padding-left: 75px;
-} */
-
 .gif-content {
     height: 600px;
     margin-top: 60px;
     margin-bottom: -174px;
 }
 
+.top-10-header {
+    font-weight: 700;
+    padding: 31px 0 0 28px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: -15px;
+}
+
 .tenor-gif-embed {
+    transition: 0.3s;
     margin: auto;
-    margin-top: 65px;
+    margin-top: 40px;
+    box-shadow: 0px 0px 32px 5px rgba(0, 0, 0, 0.38);
+}
+
+.tenor-gif-embed:hover {
+    transition: 0.3s;
+    box-shadow: 0px 0px 32px 5px rgba(82, 82, 82, 0.38);
 }

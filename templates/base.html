@@ -13,24 +13,24 @@
 
     <div class="container">
         <nav class="navbar navbar-expand-lg sticky-top">
-            <a class="navbar-brand" href="#">.Gif</a>
+            <a class="navbar-brand" href="/">.Gif</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Popular <i class="fas fa-star"></i>
+                        <a class="nav-link" href="/popular">Trending <i class="fas fa-star"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Entertainment</a>
+                        <a class="nav-link" href="/entertainment">Entertainment</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sports.html">Sports</a>
+                        <a class="nav-link" href="/sports">Sports</a>
                     </li>
                 </ul>
             </div>
@@ -40,8 +40,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <form class="gif-search justify-content-center" action="/gif" method="GET">
-                        <input class="search-input" name="search-term" type="text" placeholder="Search for a GIF..." aria-label="Search">
+                    <form class="gif-search justify-content-center" action="/search" method="GET">
+                        <input class="search-input" name="gifs" type="text" placeholder="Search for a GIF..." aria-label="Search">
                         <button type="submit" class="search-icon"><i class="fas fa-search"></i></button>
                     </form>
                     {% if search_term %}
@@ -58,8 +58,17 @@
         <div class="container-fluid">
             <div class="row">
 
+                <!-- <div class="col-sm-12">
+                    <h1 class="top-10-header">
+                        Top 10 Today
+                    </h1>
+                </div> -->
+
                 {% block index %}
                 {% endblock %}
+
+
+
 
             </div>
         </div>

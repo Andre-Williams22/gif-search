@@ -12,18 +12,17 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
-    results = top_ten()
+    results = home_random()
     list_of_gifs = results['results']
 
     # points to index.html page
     return render_template('index.html', list_of_gifs=list_of_gifs)
 
 
-@app.route('/gif', methods=['GET'])
+@app.route('/search', methods=['GET'])
 def make_gif():
 
-    search_term = request.args.get('search-term')
-    print(search_term)
+    search_term = request.args.get('gifs')
 
     response = requests.get(
         f'https://api.tenor.com/v1/search?q={search_term}&key=1F2TY5LFTDOH&limit=10')
@@ -36,40 +35,59 @@ def make_gif():
     else:
         top_10gifs = None
 
-@app.route('/sports', methods=['GET', 'POST'])
+
+@app.route('/sports', methods=['GET'])
 def sports():
-    # set the apikey and limit
-    apikey = "LIVDSRZULELA"  # test value
-    lmt = 10
 
-    # our test search
     search_term = "sports"
+    response = requests.get(
+        f'https://api.tenor.com/v1/random?q={search_term}&?key=1F2TY5LFTDOH&limit=10')
 
-    # get the top 8 GIFs for the search term
-    r = requests.get(
-        "https://api.tenor.com/v1/search?q=%s&key=%s&limit=%s" % (search_term, apikey, lmt))
-
-    if r.status_code == 200:
-        # load the GIFs using the urls for the smaller GIF sizes
-        sports = json.loads(r.content)
-        return render_template('sports.html', list_or_gifs=sports['results'])
+    if response.status_code == 200:
+        top_10gifs = json.loads(response.content)
+        return render_template('index.html', list_of_gifs=top_10gifs['results'], search_term=search_term)
     else:
-        sports = None
+        top_10gifs = None
 
 
+@app.route('/entertainment', methods=['GET'])
+def entertainment():
 
-# get the top 10 trending GIFs - using the default locale of en_US
+    search_term = "entertainment"
+    response = requests.get(
+        f'https://api.tenor.com/v1/random?q={search_term}&?key=1F2TY5LFTDOH&limit=10')
 
-def top_ten():
-    r = requests.get(
-        "https://api.tenor.com/v1/trending?key=1F2TY5LFTDOH&limit=10")
-
-    if r.status_code == 200:
-        trending_gifs = json.loads(r.content)
+    if response.status_code == 200:
+        top_10gifs = json.loads(response.content)
+        return render_template('index.html', list_of_gifs=top_10gifs['results'], search_term=search_term)
     else:
-        trending_gifs = None
+        top_10gifs = None
 
-    return trending_gifs
+
+@app.route('/popular', methods=['GET'])
+def popular():
+
+    search_term = "popular"
+    response = requests.get(
+        f'https://api.tenor.com/v1/trending?key=1F2TY5LFTDOH&limit=10')
+
+    if response.status_code == 200:
+        top_10gifs = json.loads(response.content)
+        return render_template('index.html', list_of_gifs=top_10gifs['results'], search_term=search_term)
+    else:
+        top_10gifs = None
+
+
+def home_random():
+    response = requests.get(
+        "https://api.tenor.com/v1/random?q=random&?key=1F2TY5LFTDOH&limit=10")
+
+    if response.status_code == 200:
+        random_gifs = json.loads(response.content)
+    else:
+        random_gifs = None
+
+    return random_gifs
 
 
 if __name__ == "__main__":

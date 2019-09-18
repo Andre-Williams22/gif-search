@@ -35,6 +35,7 @@ def make_gif():
     else:
         top_10gifs = None
 
+
 ''' presets sports as the search term so users see sports when routed to sports change '''
 @app.route('/sports')
 def sports():
@@ -62,6 +63,7 @@ def entertainment():
     else:
         top_10gifs = None
 
+
 @app.route('/coding')
 def coding():
 
@@ -76,8 +78,7 @@ def coding():
         top_10gifs = None
 
 
-
-@app.route('/popular')
+@app.route('/trending')
 def popular():
 
     search_term = "trending"
@@ -90,7 +91,10 @@ def popular():
     else:
         top_10gifs = None
 
-''' Uses random gifs API to display randomized gifs on the homepage''' 
+
+''' Uses random gifs API to display randomized gifs on the homepage'''
+
+
 def home_random():
     response = requests.get(
         "https://api.tenor.com/v1/random?q=random&?key=1F2TY5LFTDOH&limit=10")

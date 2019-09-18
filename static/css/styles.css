@@ -136,9 +136,45 @@ body {
     box-shadow: 0px 0px 32px 5px rgba(82, 82, 82, 0.38);
 }
 
+/* Footer Properties */
+footer {
+    background-color: #2d2d2d;
+    margin-top: 40px;
+}
 .site-footer {
-    background: black;
-    color: white;
+    color: #b9b9b9;
     padding: 20px;
+}
 
+.fa-linkedin,
+.fa-github-square {
+    font-size: 25px;
+    color: #b9b9b9;
+    transition: 0.3s;
+}
+
+.fa-linkedin:hover,
+.fa-github-square:hover {
+    font-size: 25px;
+    color: #e6dede;
+    transition: 0.3s;
+}
+
+.divider {
+    margin-right: 14px;
+}
+
+.divider:after {
+    background: #8e8e8e;
+    content: ' ';
+    margin-left: 7px;
+    position: absolute;
+    width: 2px;
+    height: 26px;
+}
+
+.media-links {
+    margin-top: -30px;
+    padding-bottom: 10px;
+    
 }

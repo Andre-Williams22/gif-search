@@ -19,7 +19,7 @@ def index():
     return render_template('index.html', list_of_gifs=list_of_gifs)
 
 
-@app.route('/search', methods=['GET'])
+@app.route('/search')
 def make_gif():
 
     search_term = request.args.get('gifs')
@@ -35,8 +35,8 @@ def make_gif():
     else:
         top_10gifs = None
 
-
-@app.route('/sports', methods=['GET'])
+''' presets sports as the search term so users see sports when routed to sports change '''
+@app.route('/sports')
 def sports():
     search_term = "sports"
     response = requests.get(
@@ -49,7 +49,7 @@ def sports():
         top_10gifs = None
 
 
-@app.route('/entertainment', methods=['GET'])
+@app.route('/entertainment')
 def entertainment():
 
     search_term = "entertainment"
@@ -63,7 +63,7 @@ def entertainment():
         top_10gifs = None
 
 
-@app.route('/popular', methods=['GET'])
+@app.route('/popular')
 def popular():
 
     search_term = "trending"
@@ -76,7 +76,7 @@ def popular():
     else:
         top_10gifs = None
 
-
+''' Uses random gifs API to display randomized gifs on the homepage''' 
 def home_random():
     response = requests.get(
         "https://api.tenor.com/v1/random?q=random&?key=1F2TY5LFTDOH&limit=10")

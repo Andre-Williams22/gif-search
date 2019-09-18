@@ -62,6 +62,20 @@ def entertainment():
     else:
         top_10gifs = None
 
+@app.route('/coding')
+def coding():
+
+    search_term = "coding"
+    response = requests.get(
+        f'https://api.tenor.com/v1/random?q={search_term}&?key=1F2TY5LFTDOH&limit=10')
+
+    if response.status_code == 200:
+        top_10gifs = json.loads(response.content)
+        return render_template('index.html', list_of_gifs=top_10gifs['results'], search_term=search_term)
+    else:
+        top_10gifs = None
+
+
 
 @app.route('/popular')
 def popular():

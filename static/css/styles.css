@@ -135,3 +135,10 @@ body {
     transition: 0.3s;
     box-shadow: 0px 0px 32px 5px rgba(82, 82, 82, 0.38);
 }
+
+.site-footer {
+    background: black;
+    color: white;
+    padding: 20px;
+
+}

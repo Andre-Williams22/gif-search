@@ -2,6 +2,9 @@
 
 ![Gif Site](https://i.imgur.com/eXxSJXg.png)
 
+## About
+This Gif search project displays randomized gifs from tenors API on the home page in columns. The max number of gifs displayed on the page is 10. If the user wants to see a specific category of gifs they have the autonomy to use the search bar and look for certain gifs. There are also the top ten trending, entertaining, sports, and programming categories that display the top ten trending gifs at the moment through different web pages with jinja templates. Ultimately, the gif search provides unlimited access to gifs with tenor's api, flask, and jinja templates.
+
 ## Authors
 
 * **Andre Williams and Alex Barksdale** - [Alex's GitHub](https://github.com/alexbarksdale)

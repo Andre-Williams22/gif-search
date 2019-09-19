@@ -12,6 +12,13 @@ body {
 .navbar-brand {
     color: #fff;
     font-weight: 800;
+    margin-right: 0;
+}
+
+.navbar-toggler-icon {
+    color: #fff;
+    font-size: 29px;
+    padding: 10px;
 }
 .nav-link {
     font-weight: 700;
@@ -41,13 +48,14 @@ body {
 .navbar-nav > li {
     display: inline-block;
     float: none;
+    padding: 10px;
 }
 
 /* Header Properties */
 .header-container {
     background: url('/static/img/home-header.png') no-repeat;
     background-size: cover;
-    margin-top: -98px;
+    margin-top: -115px;
     height: 412px;
 }
 
@@ -176,5 +184,4 @@ footer {
 .media-links {
     margin-top: -30px;
     padding-bottom: 10px;
-    
 }

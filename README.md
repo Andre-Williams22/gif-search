@@ -49,9 +49,6 @@ You should see something similar to the output below:
 * Debug mode: off
 * Running on (Your Localhost IP) (Press CTRL+C to quit)
 ```
-## Running the tests
-(TODO)
-
 ## Built With
 
 * [Flask](https://palletsprojects.com/p/flask/) - Lightweight web application framework

@@ -31,7 +31,7 @@ pip3 install requests
 ```
 git clone https://github.com/Andre-Williams22/gif-search.git
 ```
-2. Make sure in the correct directory
+2. Make sure you're in the correct directory
 
 3. Enter the development environment
 ```

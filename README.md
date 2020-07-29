@@ -1,6 +1,9 @@
 # Gif Search
 
-![Gif Site](https://i.imgur.com/eXxSJXg.png)
+![Gif Site](https://i.imgur.com/90EjYMj.png)
+
+## About
+This Gif search project displays randomized gifs from tenors API on the home page in columns. The max number of gifs displayed on the page is 10. If the user wants to see a specific category of gifs they have the autonomy to use the search bar and look for certain gifs. There are also the top ten trending, entertaining, sports, and programming categories that display the top ten trending gifs at the moment through different web pages with jinja templates. Ultimately, the gif search provides unlimited access to gifs with tenor's API, Flask, and jinja templates.
 
 ## Authors
 
@@ -28,7 +31,7 @@ pip3 install requests
 ```
 git clone https://github.com/Andre-Williams22/gif-search.git
 ```
-2. Make sure in the correct directory
+2. Make sure you're in the correct directory
 
 3. Enter the development environment
 ```
@@ -46,9 +49,6 @@ You should see something similar to the output below:
 * Debug mode: off
 * Running on (Your Localhost IP) (Press CTRL+C to quit)
 ```
-## Running the tests
-(TODO)
-
 ## Built With
 
 * [Flask](https://palletsprojects.com/p/flask/) - Lightweight web application framework

@@ -3,7 +3,10 @@ import requests
 import os
 import urllib.request as ur
 import json
-import json
+from dotenv import load_dotenv
+load_dotenv()
+# tenor api key
+TENOR_API_KEY = os.getenv("TENOR_API_KEY")
 
 app = Flask(__name__)
 
@@ -23,7 +26,7 @@ def index():
 def make_gif():
 
     search_term = request.args.get('gifs')
-
+    # query string
     response = requests.get(
         f'https://api.tenor.com/v1/search?q={search_term}&key=1F2TY5LFTDOH&limit=10')
 
